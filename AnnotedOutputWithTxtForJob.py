@@ -57,10 +57,8 @@ def run_yolo_on_images(
             file_id = str(uuid.uuid4()) # Unique ID for the image processing instance
 
             plot_kwargs = {}
-            if custom_line_width is not None:
-                plot_kwargs['line_width'] = custom_line_width
-            if custom_font_size is not None:
-                plot_kwargs['font_size'] = custom_font_size
+            plot_kwargs['line_width'] = custom_line_width
+            plot_kwargs['font_size'] = custom_font_size
             
             annotated_image_bgr = result.plot(**plot_kwargs)
             output_image_file_path = os.path.join(custom_annotated_images_output_dir, file_name)
